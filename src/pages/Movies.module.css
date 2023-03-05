@@ -1,0 +1,33 @@
+.moviesContainer {
+  height: 2000px;
+  color: rgb(252, 181, 50);
+}
+
+.cards {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin-left: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.card:hover {
+  color: white;
+}
+
+.card h3,
+h4 {
+  margin-block-end: 10px;
+  margin-block-start: 10px;
+}
+
+.posterImg {
+  height: 250px;
+}
