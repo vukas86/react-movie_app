@@ -1,7 +1,12 @@
+import { useLoaderData } from "react-router-dom";
+
 import styles from "./Movies.module.css";
 import moviePoster from "../assets/images/avenger.jpg";
 
 function Movies() {
+  const movies = useLoaderData();
+
+  console.log(movies);
   return (
     <>
       <div className={styles.moviesContainer}>
@@ -121,3 +126,13 @@ function Movies() {
 }
 
 export default Movies;
+
+// const API_KEY = "560c873c";
+
+export const moviesLoader = async () => {
+  const res = await fetch(
+    "http://www.omdbapi.com/?s=inception&apikey=560c873c"
+  );
+
+  return res.json();
+};

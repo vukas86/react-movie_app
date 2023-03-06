@@ -11,19 +11,20 @@ h1 {
 }
 .btn {
   text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .btnRed {
-  /* margin: 0 auto; */
+  text-decoration: none;
   min-width: 130px;
   height: 40px;
   color: #fff;
-  padding: 5px 10px;
+  padding: 15px 20px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  display: inline-block;
+
   outline: none;
   border-radius: 5px;
   border: none;

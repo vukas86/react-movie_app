@@ -1,28 +1,15 @@
-import styles from "./RootLayout.module.css";
-import logoImage from "../../assets/logos/logo_white.png";
+import { Outlet, useNavigation } from "react-router-dom";
+
+import MainNav from "../../components/MainNav";
 
 function RootLayout() {
+  const navigation = useNavigation();
   return (
-    <div className="root-layout">
-      <header>
-        <div className="logo">
-          <a href="/">
-            <img src={logoImage} alt="logo" className={styles.logoImg}></img>
-          </a>
-        </div>
-        <nav>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/">Movies</a>
-          </li>
-          <li>
-            <a href="/">Tv Shows</a>
-          </li>
-        </nav>
-      </header>
-    </div>
+    <>
+      <MainNav />
+      {navigation.state === "loading" && <p>Loading...</p>}
+      <Outlet />
+    </>
   );
 }
 
