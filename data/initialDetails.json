@@ -2,33 +2,73 @@
   "movies": [
     {
       "id": 1,
-      "imgPath": "../assets/images/poster.jpg",
-      "title": "Jane Doe",
-      "year": 2014
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/mjhme76i/breaking-bad-movie-poster.jpg?v=1456828582",
+      "title": "Breaking Bad",
+      "year": 2006,
+      "type": "show"
     },
     {
       "id": 2,
-      "imgPath": "../assets/images/poster.jpg",
-      "title": "Die Hard",
-      "year": 1997
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/dllfejwr/chernobyl-movie-poster.jpg?v=1556311315",
+      "title": "Chernobyl",
+      "year": 2019,
+      "type": "show"
     },
     {
       "id": 3,
-      "imgPath": "../assets/images/poster.jpg",
-      "title": "Increadble Writers",
-      "year": 2003
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/dmyn2t9i/the-wire-movie-poster.jpg?v=1456238448",
+      "title": "The Wire",
+      "year": 1999,
+      "type": "show"
     },
     {
       "id": 4,
-      "imgPath": "../assets/images/poster.jpg",
-      "title": "Life On Mars",
-      "year": 2022
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/2o6p8pux/south-park-movie-poster.jpg?v=1456258227",
+      "title": "South Park",
+      "year": 1997,
+      "type": "show"
     },
     {
       "id": 5,
-      "imgPath": "../assets/images/poster.jpg",
-      "title": "Ghostbusters",
-      "year": 1986
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/sisc72yp/twilight-movie-poster.jpg?v=1527869503",
+      "title": "The Twilight Zone",
+      "year": 1959,
+      "type": "show"
+    },
+    {
+      "id": 6,
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/3enpbgqf/the-last-kingdom-movie-poster.jpg?v=14563613008",
+      "title": "The Last of Us",
+      "year": 2023,
+      "type": "show"
+    },
+    {
+      "id": 7,
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/ntkf882y/the-office-dvd-movie-cover.jpg?v=1456217838",
+      "title": "The Office",
+      "year": 2005,
+      "type": "show"
+    },
+    {
+      "id": 8,
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/pp0nftcp/only-fools-and-horses-dvd-movie-cover.jpg?v=1456230830",
+      "title": "Only Fools and Horses",
+      "year": 1981,
+      "type": "show"
+    },
+    {
+      "id": 9,
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/vasi4esw/true-detective-movie-poster.jpg?v=1456484058",
+      "title": "True Detective",
+      "year": 2014,
+      "type": "show"
+    },
+    {
+      "id": 10,
+      "imgPath": "https://media-cache.cinematerial.com/p/500x/brpymceo/friends-movie-poster.jpg?v=1456318351",
+      "title": "Friends",
+      "year": 1994,
+      "type": "show"
     }
   ]
 }

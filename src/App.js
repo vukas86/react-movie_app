@@ -4,7 +4,7 @@ import RootLayout from "./layouts/root/RootLayout";
 
 import Home from "./pages/Home";
 import Movies, { moviesLoader } from "./pages/Movies";
-import Shows from "./pages/Shows";
+import Shows, { showsLoader } from "./pages/Shows";
 
 import Error from "./pages/Error";
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "movies", element: <Movies />, loader: moviesLoader },
-      { path: "shows", element: <Shows /> },
+      { path: "shows", element: <Shows />, loader: showsLoader },
     ],
   },
 ]);

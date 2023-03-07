@@ -1,21 +1,24 @@
 .moviesContainer {
   height: 2000px;
   color: rgb(252, 181, 50);
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 70px;
 }
 
 .cards {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 70px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .card {
+  width: 250px;
+  text-decoration: none;
   margin-left: 20px;
   margin-top: 30px;
   cursor: pointer;
+  color: orange;
 }
 
 .card:hover {
@@ -24,10 +27,15 @@
 
 .card h3,
 h4 {
+  word-wrap: break-word;
   margin-block-end: 10px;
   margin-block-start: 10px;
 }
 
 .posterImg {
   height: 250px;
+}
+
+.info {
+  width: 80%;
 }

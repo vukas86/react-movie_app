@@ -1,124 +1,35 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 import styles from "./Movies.module.css";
-import moviePoster from "../assets/images/avenger.jpg";
 
 function Movies() {
   const movies = useLoaderData();
 
-  console.log(movies);
   return (
     <>
       <div className={styles.moviesContainer}>
         <div className={styles.cards}>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
-          <div className={styles.card}>
-            <img
-              src={moviePoster}
-              alt="movie poster"
-              className={styles.posterImg}
-            ></img>
-            <h3>Avengers</h3>
-            <h4>2004</h4>
-          </div>
+          {movies.Search.map((movie) => (
+            <Link to="/" key={movie.imdbID} className={styles.card}>
+              <div className={styles.card}>
+                <img
+                  src={movie.Poster}
+                  alt={movie.Title}
+                  className={styles.posterImg}
+                  onError={(e) =>
+                    (e.target.onerror = null)(
+                      (e.target.src =
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/495px-No-Image-Placeholder.svg.png?202009121220190")
+                    )
+                  }
+                />
+                <div className={styles.info}>
+                  <h3>{movie.Title}</h3>
+                  <h4>{movie.Year}</h4>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </>
@@ -134,5 +45,5 @@ export const moviesLoader = async () => {
     "http://www.omdbapi.com/?s=inception&apikey=560c873c"
   );
 
-  return res.json();
+  return res;
 };
