@@ -10,7 +10,11 @@ function Movies() {
       <div className={styles.moviesContainer}>
         <div className={styles.cards}>
           {movies.Search.map((movie) => (
-            <Link to="/" key={movie.imdbID} className={styles.card}>
+            <Link
+              to={movie.imdbID.toString()}
+              key={movie.imdbID}
+              className={styles.card}
+            >
               <div className={styles.card}>
                 <img
                   src={movie.Poster}
@@ -26,6 +30,7 @@ function Movies() {
                 <div className={styles.info}>
                   <h3>{movie.Title}</h3>
                   <h4>{movie.Year}</h4>
+                  <p>{movie.imdbID}</p>
                 </div>
               </div>
             </Link>

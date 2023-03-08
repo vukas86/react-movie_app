@@ -10,7 +10,11 @@ function Shows() {
       <div className={styles.moviesContainer}>
         <div className={styles.cards}>
           {shows.map((show) => (
-            <Link to="/" key={show.id} className={styles.card}>
+            <Link
+              to={`/shows/${show.id}`}
+              key={show.id}
+              className={styles.card}
+            >
               <img
                 src={show.imgPath}
                 alt={show.title}
