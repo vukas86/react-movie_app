@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, json } from "react-router-dom";
 
 import styles from "./Movies.module.css";
 
@@ -42,5 +42,14 @@ export default Shows;
 
 export const showsLoader = async () => {
   const res = await fetch("http://localhost:4000/movies");
-  return res;
+  if (!res.ok) {
+    throw json(
+      { message: "Could not load shows!" },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    return res;
+  }
 };

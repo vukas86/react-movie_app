@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, json } from "react-router-dom";
 
 import styles from "./Movies.module.css";
 
@@ -50,5 +50,14 @@ export const moviesLoader = async () => {
     "http://www.omdbapi.com/?s=inception&apikey=560c873c"
   );
 
-  return res;
+  if (!res.ok) {
+    throw json(
+      { message: "Could not feth movies!" },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    return res;
+  }
 };

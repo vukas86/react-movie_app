@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import SearchBar from "./SearchBAr";
 import styles from "./MainNav.module.css";
 import logoImage from "../assets/logos/logo_white.png";
 
@@ -12,6 +12,7 @@ function MainNav() {
             <img src={logoImage} alt="logo" className={styles.logoImg}></img>
           </a>
         </div>
+        <SearchBar />
         <nav>
           <li>
             <NavLink

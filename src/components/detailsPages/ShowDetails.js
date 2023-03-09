@@ -41,26 +41,9 @@ function DetailsPage() {
 
 export default DetailsPage;
 
-export async function detailsloader({ request, params }) {
+export async function showDetailsloader({ request, params }) {
   const id = params.id;
   const res = await fetch("http://localhost:4000/movies/" + id);
-  if (!res.ok) {
-    throw json(
-      { message: "Could not fetch details for selected show" },
-      { status: 500 }
-    );
-  } else {
-    return res;
-  }
-}
-
-export async function movieDetailsLoader({ request, params }) {
-  const id = params.id;
-  const res = await fetch(
-    "https://www.omdbapi.com/?apikey=560c873c" + `&i=${id}`
-  );
-  console.log(res);
-
   if (!res.ok) {
     throw json(
       { message: "Could not fetch details for selected show" },

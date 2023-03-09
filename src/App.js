@@ -5,7 +5,13 @@ import RootLayout from "./layouts/root/RootLayout";
 import Home from "./pages/Home";
 import Movies, { moviesLoader } from "./pages/Movies";
 import Shows, { showsLoader } from "./pages/Shows";
-import DetailsPage from "./pages/DetailsPage";
+
+import ShowDetails, {
+  showDetailsloader,
+} from "./components/detailsPages/ShowDetails";
+import MovieDetails, {
+  movieDetailsLoader,
+} from "./components/detailsPages/MovieDetails";
 
 import Error from "./pages/Error";
 
@@ -23,8 +29,16 @@ const router = createBrowserRouter([
         children: [],
       },
       { path: "shows", element: <Shows />, loader: showsLoader },
-      { path: "movies/:id", element: <DetailsPage /> },
-      { path: "shows/:id", element: <DetailsPage /> },
+      {
+        path: "movies/:id",
+        element: <MovieDetails />,
+        loader: movieDetailsLoader,
+      },
+      {
+        path: "shows/:id",
+        element: <ShowDetails />,
+        loader: showDetailsloader,
+      },
     ],
   },
 ]);
