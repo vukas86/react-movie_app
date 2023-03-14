@@ -1,49 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { MovieContext } from "../../src/store/MovieContext";
 
-const api = "https://www.omdbapi.com/?";
-const apiKey = "apikey=560c873c";
+// const api = "https://www.omdbapi.com/?";
+// const apiKey = "apikey=560c873c";
 
 function SearchBar() {
-  const [movieName, setMovieName] = useState("");
+  const [movie, setMovie] = useContext(MovieContext);
 
-  const url =
-    "https://www.omdbapi.com/?apikey=560c873c" +
-    `&s=${movieName}` +
-    "&type=movie" +
-    "&page=1";
-
-  const fetchData = async () => {
+  async function handleSearch(e) {
     try {
-      const response = await fetch(url);
-      const json = await response.json();
-      console.log(json);
-    } catch (error) {
-      console.log("error", error);
+      const response = await fetch(
+        "https://www.omdbapi.com/?apikey=560c873c" +
+          `&s=${e.target.value}` +
+          "&type=movie" +
+          "&page=1"
+      );
+      const data = await response.json();
+      setMovie(data.Search);
+    } catch (err) {
+      console.error(`Something was wrong! ${err}`);
     }
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    fetchData();
-  };
+  }
 
   return (
     <>
       <div>
-        <form>
-          <div className="searchBar">
-            <label htmlFor="name"></label>
-            <input
-              type="search"
-              name="name"
-              placeholder="movie name"
-              onChange={(e) => setMovieName(e.target.value)}
-            />
-            <button type="submit" onClick={(e) => handleSearch(e)}>
-              Search
-            </button>
-          </div>
-        </form>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search for Movie or Show"
+          onChange={handleSearch}
+        ></input>
       </div>
     </>
   );

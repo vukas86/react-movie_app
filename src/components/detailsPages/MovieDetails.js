@@ -1,10 +1,10 @@
 import { useLoaderData, json } from "react-router-dom";
 
+import AddToListBtn from "./AddToListBtn";
 import styles from "./DetailsPage.module.css";
 
 function DetailsPage() {
   const movie = useLoaderData();
-  console.log(movie);
 
   return (
     <>
@@ -31,9 +31,7 @@ function DetailsPage() {
 
           <p>{movie.Plot}</p>
           <div>
-            <button className={styles.detailBtn}>
-              Add to favorites &#x2764;
-            </button>
+            <AddToListBtn movie={movie} />
           </div>
         </div>
       </div>

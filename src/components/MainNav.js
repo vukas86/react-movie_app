@@ -45,6 +45,16 @@ function MainNav() {
               Tv Shows
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="mylist"
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+            >
+              My List
+            </NavLink>
+          </li>
         </nav>
       </header>
     </div>

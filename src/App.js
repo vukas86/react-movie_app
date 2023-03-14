@@ -14,6 +14,7 @@ import MovieDetails, {
 } from "./components/detailsPages/MovieDetails";
 
 import Error from "./pages/Error";
+import UserList from "./pages/UserList";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         children: [],
       },
       { path: "shows", element: <Shows />, loader: showsLoader },
+      { path: "mylist", element: <UserList /> },
       {
         path: "movies/:id",
         element: <MovieDetails />,

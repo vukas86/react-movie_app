@@ -1,10 +1,10 @@
 import { useLoaderData, json } from "react-router-dom";
 
+import AddToListBtn from "./AddToListBtn";
 import styles from "./DetailsPage.module.css";
 
 function DetailsPage() {
   const show = useLoaderData();
-  console.log(show);
 
   return (
     <>
@@ -29,9 +29,7 @@ function DetailsPage() {
             Brigadier—maybe you should employ the services of a very large cat?
           </p>
           <div>
-            <button className={styles.detailBtn}>
-              Add to favorites &#x2764;
-            </button>
+            <AddToListBtn />
           </div>
         </div>
       </div>
