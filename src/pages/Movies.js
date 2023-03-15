@@ -5,9 +5,7 @@ import styles from "./Movies.module.css";
 import { MovieContext } from "../store/MovieContext";
 
 function Movies() {
-  const movies = useLoaderData();
-
-  const [movie, setMovie] = useContext(MovieContext);
+  const { movie, setMovie } = useContext(MovieContext);
 
   return (
     <>
@@ -43,36 +41,6 @@ function Movies() {
             : null}
         </div>
       </div>
-      {/* <div className={styles.moviesContainer}>
-        <div className={styles.cards}>
-          {movies.Search.map((movie) => (
-            <Link
-              to={movie.imdbID.toString()}
-              key={movie.imdbID}
-              className={styles.card}
-            >
-              <div className={styles.card}>
-                <img
-                  src={movie.Poster}
-                  alt={movie.Title}
-                  className={styles.posterImg}
-                  onError={(e) =>
-                    (e.target.onerror = null)(
-                      (e.target.src =
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/495px-No-Image-Placeholder.svg.png?202009121220190")
-                    )
-                  }
-                />
-                <div className={styles.info}>
-                  <h3>{movie.Title}</h3>
-                  <h4>{movie.Year}</h4>
-                  <p>{movie.imdbID}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div> */}
     </>
   );
 }

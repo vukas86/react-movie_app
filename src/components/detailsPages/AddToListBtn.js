@@ -1,16 +1,17 @@
 import { useContext } from "react";
-import { MovieContext } from "../../store/MovieContext";
+import { UserListContext } from "../../store/UserListContext";
 
 import styles from "./DetailsPage.module.css";
 
 function AddToListBtn(props) {
-  const [userList, setUserList] = useContext(MovieContext);
+  const [userList, setUserList] = useContext(UserListContext);
   console.log(userList);
 
   const addToListHandler = () => {
-    setUserList((prevState) => {
-      return [props, ...prevState];
-    });
+    // setUserList((prevState) => {
+    //   return [user, ...prevState];
+    // });
+    console.log("hey");
   };
   return (
     <button className={styles.detailBtn} onClick={addToListHandler}>

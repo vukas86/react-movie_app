@@ -5,7 +5,7 @@ import { MovieContext } from "../../src/store/MovieContext";
 // const apiKey = "apikey=560c873c";
 
 function SearchBar() {
-  const [movie, setMovie] = useContext(MovieContext);
+  const { movie, setMovie } = useContext(MovieContext);
 
   async function handleSearch(e) {
     try {
@@ -38,9 +38,3 @@ function SearchBar() {
 }
 
 export default SearchBar;
-
-// export const searchLoader = async () => {
-//   const res = await fetch(
-//     "https://www.omdbapi.com/?apikey=560c873c" + `&s=${movieName}`
-//   );
-// };
