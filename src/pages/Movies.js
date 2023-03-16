@@ -9,7 +9,7 @@ function Movies() {
 
   return (
     <>
-      <div className={styles.moviesContainer}>
+      <div className="moviesContainer">
         <div className={styles.cards}>
           {Array.isArray(movie)
             ? movie.map((movie) => (

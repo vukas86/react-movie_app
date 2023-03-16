@@ -35,3 +35,18 @@
 .detailBtn:active {
   margin-top: 28px;
 }
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background-color: rgb(127, 144, 146);
+}

@@ -1,4 +1,4 @@
-import { useLoaderData, json } from "react-router-dom";
+import { useLoaderData, json, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { MovieContext } from "../../store/MovieContext";
 
@@ -6,10 +6,10 @@ import styles from "./DetailsPage.module.css";
 
 function DetailsPage() {
   const { userList, setUserList } = useContext(MovieContext);
-  console.log(userList);
 
   const movieDetails = useLoaderData();
-  console.log(movieDetails);
+
+  const navigate = useNavigate();
 
   const addToListHandler = () => {
     setUserList((prevState) => {
@@ -44,6 +44,15 @@ function DetailsPage() {
           <p>{movieDetails.Plot}</p>
           <button className={styles.detailBtn} onClick={addToListHandler}>
             Add to my list &#x2764;
+          </button>
+        </div>
+        <div>
+          <button
+            className={styles.closeBtn}
+            onClick={() => navigate(-1)}
+            title="Go back to movies"
+          >
+            X
           </button>
         </div>
       </div>

@@ -1,0 +1,32 @@
+.oneMovie {
+  margin: 25px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+  color: black;
+  width: 300px;
+  height: 450px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.oneMovie img {
+  height: 350px;
+}
+
+.oneMovie h3 {
+  margin: 10px;
+}
+
+.removeBtn {
+  padding: 4px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  background-color: rgb(67, 67, 67);
+}
