@@ -33,7 +33,6 @@ function Movies() {
                     <div className={styles.info}>
                       <h3>{movie.Title}</h3>
                       <h4>{movie.Year}</h4>
-                      <p>{movie.imdbID}</p>
                     </div>
                   </div>
                 </Link>

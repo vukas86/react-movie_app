@@ -1,10 +1,14 @@
 import { useLoaderData, json } from "react-router-dom";
 
-import AddToListBtn from "./AddToListBtn";
+import CloseBtn from "./CloseBtn";
 import styles from "./DetailsPage.module.css";
 
 function DetailsPage() {
   const show = useLoaderData();
+
+  const addToListHandler = () => {
+    console.log("hi");
+  };
 
   return (
     <>
@@ -28,9 +32,12 @@ function DetailsPage() {
             standing on my scarf. It seems you have a very large rat
             Brigadier—maybe you should employ the services of a very large cat?
           </p>
-          <div>
-            <AddToListBtn />
-          </div>
+          <button className={styles.detailBtn} onClick={addToListHandler}>
+            Add to my list &#x2764;
+          </button>
+        </div>
+        <div>
+          <CloseBtn />
         </div>
       </div>
     </>

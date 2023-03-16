@@ -50,3 +50,7 @@
 .closeBtn:hover {
   background-color: rgb(127, 144, 146);
 }
+
+.info span {
+  color: rgb(158, 222, 81);
+}

@@ -1,0 +1,12 @@
+.searchField {
+  border: 2px solid orange;
+  border-radius: 29px;
+  height: 35px;
+  background-color: black;
+  color: white;
+  padding-left: 15px;
+}
+
+.searchField::placeholder {
+  color: white;
+}

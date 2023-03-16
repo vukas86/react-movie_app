@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { MovieContext } from "../../src/store/MovieContext";
+import styles from "./SearchBAr.module.css";
 
 // const api = "https://www.omdbapi.com/?";
 // const apiKey = "apikey=560c873c";
@@ -29,8 +30,9 @@ function SearchBar() {
           type="search"
           id="search"
           name="search"
-          placeholder="Search for Movie or Show"
+          placeholder="Search..."
           onChange={handleSearch}
+          className={styles.searchField}
         ></input>
       </div>
     </>

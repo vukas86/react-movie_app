@@ -1,6 +1,8 @@
-import { useLoaderData, json, useNavigate } from "react-router-dom";
+import { useLoaderData, json } from "react-router-dom";
 import { useContext } from "react";
 import { MovieContext } from "../../store/MovieContext";
+
+import CloseBtn from "./CloseBtn";
 
 import styles from "./DetailsPage.module.css";
 
@@ -8,14 +10,17 @@ function DetailsPage() {
   const { userList, setUserList } = useContext(MovieContext);
 
   const movieDetails = useLoaderData();
-
-  const navigate = useNavigate();
+  console.log(movieDetails);
 
   const addToListHandler = () => {
-    setUserList((prevState) => {
-      return [movieDetails, ...prevState];
-    });
-    console.log("hey");
+    const sameMovie = userList.find((m) => m.imdbID === movieDetails.imdbID);
+    if (!sameMovie) {
+      setUserList((prevState) => {
+        return [movieDetails, ...prevState];
+      });
+    } else {
+      return alert("Movie already added");
+    }
   };
 
   return (
@@ -37,8 +42,15 @@ function DetailsPage() {
         <div className={styles.info}>
           <div>
             <h2>{movieDetails.Title}</h2>
-            <h3>Relesed Year: {movieDetails.Year}</h3>
-            <h3>Genre: {movieDetails.Genre}</h3>
+            <h3>
+              Released Year: <span>{movieDetails.Year}</span>
+            </h3>
+            <h3>
+              Genre: <span>{movieDetails.Genre}</span>
+            </h3>
+            <h4>
+              Rating: <span>{movieDetails.imdbRating}</span> / 10
+            </h4>
           </div>
 
           <p>{movieDetails.Plot}</p>
@@ -47,13 +59,7 @@ function DetailsPage() {
           </button>
         </div>
         <div>
-          <button
-            className={styles.closeBtn}
-            onClick={() => navigate(-1)}
-            title="Go back to movies"
-          >
-            X
-          </button>
+          <CloseBtn />
         </div>
       </div>
     </>
