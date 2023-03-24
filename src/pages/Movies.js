@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData, Link, json } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 
 import styles from "./Movies.module.css";
 import { MovieContext } from "../store/MovieContext";
@@ -37,7 +37,7 @@ function Movies() {
                   </div>
                 </Link>
               ))
-            : null}
+            : false}
         </div>
       </div>
     </>

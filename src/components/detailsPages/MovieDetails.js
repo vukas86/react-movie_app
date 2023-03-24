@@ -10,7 +10,6 @@ function DetailsPage() {
   const { userList, setUserList } = useContext(MovieContext);
 
   const movieDetails = useLoaderData();
-  console.log(movieDetails);
 
   const addToListHandler = () => {
     const sameMovie = userList.find((m) => m.imdbID === movieDetails.imdbID);
