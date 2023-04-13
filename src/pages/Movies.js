@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, json } from "react-router-dom";
-
+import Pagination from "../components/pagination/Pagination";
 import styles from "./Movies.module.css";
 import { MovieContext } from "../store/MovieContext";
 
@@ -40,6 +40,7 @@ function Movies() {
             : false}
         </div>
       </div>
+      <Pagination />
     </>
   );
 }

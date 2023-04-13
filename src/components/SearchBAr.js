@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { MovieContext } from "../../src/store/MovieContext";
+import { PaginationContext } from "../store/Pagination.Context";
 import styles from "./SearchBAr.module.css";
 
 // const api = "https://www.omdbapi.com/?";
@@ -7,6 +8,7 @@ import styles from "./SearchBAr.module.css";
 
 function SearchBar() {
   const { movie, setMovie } = useContext(MovieContext);
+  const { currentPage, setCurrentPage } = useContext(PaginationContext);
 
   async function handleSearch(e) {
     try {
@@ -14,7 +16,7 @@ function SearchBar() {
         "https://www.omdbapi.com/?apikey=560c873c" +
           `&s=${e.target.value}` +
           "&type=movie" +
-          "&page=1"
+          `&page=${currentPage}`
       );
       const data = await response.json();
       setMovie(data.Search);

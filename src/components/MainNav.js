@@ -8,9 +8,9 @@ function MainNav() {
     <div className="root-layout">
       <header>
         <div className="logo">
-          <a href="/">
+          <NavLink to="/">
             <img src={logoImage} alt="logo" className={styles.logoImg}></img>
-          </a>
+          </NavLink>
         </div>
         <SearchBar />
         <nav>

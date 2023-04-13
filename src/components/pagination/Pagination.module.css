@@ -1,0 +1,43 @@
+.paginCont {
+  margin: 0 auto;
+}
+.paginCont ul {
+  background-color: #86011b;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+}
+
+.paginCont ul li a {
+  padding: 10px;
+  width: 20px;
+  border: 1px solid black;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  list-style: none;
+}
+.paginCont ul li a:hover,
+.btnPag:hover {
+  background-color: red;
+}
+
+.activePage {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.btnPag {
+  height: 40px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #86011b;
+  border: 1px solid black;
+  color: white;
+}
+
+.btnPag:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
