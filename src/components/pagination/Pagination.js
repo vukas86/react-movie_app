@@ -1,19 +1,21 @@
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { PaginationContext } from "../../store/Pagination.Context";
+
 import styles from "./Pagination.module.css";
 
 function Pagination() {
-  let { currentPage, setCurrentPage } = useContext(PaginationContext);
+  const { currentPage } = useSelector((store) => store.pagination);
+  console.log(currentPage);
 
   const prevPageHandler = () => {
-    if (currentPage === 1) return;
-    setCurrentPage(currentPage--);
+    // if (currentPage === 1) return;
+    // setCurrentPage(currentPage--);
     console.log(currentPage);
   };
   const nextPageHandler = () => {
-    if (currentPage === 5) return;
-    setCurrentPage(currentPage++);
+    // if (currentPage === 5) return;
+    // setCurrentPage(currentPage++);
     console.log(currentPage);
   };
   return (

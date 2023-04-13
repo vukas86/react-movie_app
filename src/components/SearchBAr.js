@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { MovieContext } from "../../src/store/MovieContext";
-import { PaginationContext } from "../store/Pagination.Context";
+import { useSelector } from "react-redux";
 import styles from "./SearchBAr.module.css";
 
 // const api = "https://www.omdbapi.com/?";
@@ -8,7 +8,8 @@ import styles from "./SearchBAr.module.css";
 
 function SearchBar() {
   const { movie, setMovie } = useContext(MovieContext);
-  const { currentPage, setCurrentPage } = useContext(PaginationContext);
+
+  const { currentPage } = useSelector((store) => store.pagination);
 
   async function handleSearch(e) {
     try {

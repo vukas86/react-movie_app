@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link, json } from "react-router-dom";
 import Pagination from "../components/pagination/Pagination";
 import styles from "./Movies.module.css";
@@ -6,38 +7,40 @@ import { MovieContext } from "../store/MovieContext";
 
 function Movies() {
   const { movie, setMovie } = useContext(MovieContext);
+  const { movieData } = useSelector((store) => store.pagination);
+  const movieInfo =
+    Array.isArray(movie) && movie.length > 0 ? movie : movieData;
 
+  console.log(movieInfo);
   return (
     <>
       <div className="moviesContainer">
         <div className={styles.cards}>
-          {Array.isArray(movie)
-            ? movie.map((movie) => (
-                <Link
-                  to={movie.imdbID.toString()}
-                  key={movie.imdbID}
-                  className={styles.card}
-                >
-                  <div className={styles.card}>
-                    <img
-                      src={movie.Poster}
-                      alt={movie.Title}
-                      className={styles.posterImg}
-                      onError={(e) =>
-                        (e.target.onerror = null)(
-                          (e.target.src =
-                            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/495px-No-Image-Placeholder.svg.png?202009121220190")
-                        )
-                      }
-                    />
-                    <div className={styles.info}>
-                      <h3>{movie.Title}</h3>
-                      <h4>{movie.Year}</h4>
-                    </div>
-                  </div>
-                </Link>
-              ))
-            : false}
+          {movieInfo.map((movie) => (
+            <Link
+              to={movie.imdbID.toString()}
+              key={movie.imdbID}
+              className={styles.card}
+            >
+              <div className={styles.card}>
+                <img
+                  src={movie.Poster}
+                  alt={movie.Title}
+                  className={styles.posterImg}
+                  onError={(e) =>
+                    (e.target.onerror = null)(
+                      (e.target.src =
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/495px-No-Image-Placeholder.svg.png?202009121220190")
+                    )
+                  }
+                />
+                <div className={styles.info}>
+                  <h3>{movie.Title}</h3>
+                  <h4>{movie.Year}</h4>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
       <Pagination />
