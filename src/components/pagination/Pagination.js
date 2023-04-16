@@ -1,22 +1,23 @@
-import { useContext } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import styles from "./Pagination.module.css";
+import {
+  nextPage,
+  prevPage,
+} from "../../redux/features/pagination/paginationSlice";
 
 function Pagination() {
+  const dispatch = useDispatch();
   const { currentPage } = useSelector((store) => store.pagination);
-  console.log(currentPage);
 
   const prevPageHandler = () => {
-    // if (currentPage === 1) return;
-    // setCurrentPage(currentPage--);
-    console.log(currentPage);
+    if (currentPage === 1) return;
+    dispatch(prevPage());
   };
   const nextPageHandler = () => {
-    // if (currentPage === 5) return;
-    // setCurrentPage(currentPage++);
-    console.log(currentPage);
+    if (currentPage === 5) return;
+    dispatch(nextPage());
   };
   return (
     <div className={styles.paginCont}>

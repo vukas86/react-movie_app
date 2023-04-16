@@ -14,7 +14,7 @@ function DetailsPage() {
     <>
       <div className={styles.detailsContainer}>
         <div className={styles.detailImg}>
-          <img src={show.imgPath} alt="poster"></img>
+          <img src={show.imgPath} alt="poster" />
         </div>
         <div className={styles.info}>
           <div>

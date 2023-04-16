@@ -8,10 +8,14 @@ import { MovieContext } from "../store/MovieContext";
 function Movies() {
   const { movie, setMovie } = useContext(MovieContext);
   const { movieData } = useSelector((store) => store.pagination);
-  const movieInfo =
-    Array.isArray(movie) && movie.length > 0 ? movie : movieData;
+  const { searchResults } = useSelector((store) => store.pagination);
+  console.log(searchResults);
 
-  console.log(movieInfo);
+  const movieInfo =
+    Array.isArray(searchResults) && searchResults.length > 0
+      ? searchResults
+      : movieData;
+
   return (
     <>
       <div className="moviesContainer">

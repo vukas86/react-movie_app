@@ -41,7 +41,7 @@ body {
 }
 
 .moviesContainer {
-  height: 2000px;
+  height: auto;
   color: rgb(252, 181, 50);
   width: 90%;
   margin: 0 auto;
