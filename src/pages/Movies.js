@@ -9,7 +9,6 @@ function Movies() {
   const { movie, setMovie } = useContext(MovieContext);
   const { movieData } = useSelector((store) => store.pagination);
   const { searchResults } = useSelector((store) => store.pagination);
-  console.log(searchResults);
 
   const movieInfo =
     Array.isArray(searchResults) && searchResults.length > 0

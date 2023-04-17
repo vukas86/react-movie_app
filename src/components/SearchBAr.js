@@ -31,22 +31,6 @@ function SearchBar() {
         dispatch(addSearchResults(data.Search));
       });
   }, [query, currentPage]);
-  console.log(searchResults);
-
-  // async function handleSearch(e) {
-  //   try {
-  //     const response = await fetch(
-  //       "https://www.omdbapi.com/?apikey=560c873c" +
-  //         `&s=${e.target.value}` +
-  //         "&type=movie" +
-  //         `&page=${currentPage}`
-  //     );
-  //     const data = await response.json();
-  //     setMovie(data.Search);
-  //   } catch (err) {
-  //     console.error(`Something was wrong! ${err}`);
-  //   }
-  // }
 
   return (
     <>

@@ -3,59 +3,53 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./Pagination.module.css";
 import {
+  changeCurrentPage,
   nextPage,
   prevPage,
 } from "../../redux/features/pagination/paginationSlice";
 
 function Pagination() {
   const dispatch = useDispatch();
-  const { currentPage } = useSelector((store) => store.pagination);
 
-  const prevPageHandler = () => {
-    if (currentPage === 1) return;
-    dispatch(prevPage());
+  const { currentPage } = useSelector((store) => store.pagination);
+  const { pageNumber } = useSelector((store) => store.pagination);
+
+  const modifyCurrentPageHandler = (e) => {
+    e.preventDefault();
+    if (e.target.textContent === "Prev" && currentPage !== 1) {
+      return dispatch(prevPage());
+    }
+    if (e.target.textContent === "Next" && currentPage !== 5) {
+      return dispatch(nextPage());
+    }
   };
-  const nextPageHandler = () => {
-    if (currentPage === 5) return;
-    dispatch(nextPage());
+
+  const selectedNumberHandler = (e) => {
+    e.preventDefault();
+    dispatch(changeCurrentPage(parseInt(e.target.textContent)));
   };
+
   return (
     <div className={styles.paginCont}>
       <ul>
         <li>
-          <button className={styles.btnPag} onClick={prevPageHandler}>
+          <button className={styles.btnPag} onClick={modifyCurrentPageHandler}>
             Prev
           </button>
         </li>
+        {pageNumber.map((num) => (
+          <li key={num}>
+            <NavLink
+              className={currentPage === num ? "activePage" : null}
+              onClick={selectedNumberHandler}
+            >
+              {num}
+            </NavLink>
+          </li>
+        ))}
 
         <li>
-          <NavLink className={currentPage === 1 ? "activePage" : null}>
-            1
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={currentPage === 2 ? "activePage" : null}>
-            2
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={currentPage === 3 ? "activePage" : null}>
-            3
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={currentPage === 4 ? "activePage" : null}>
-            4
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={currentPage === 5 ? "activePage" : null}>
-            5
-          </NavLink>
-        </li>
-
-        <li>
-          <button className={styles.btnPag} onClick={nextPageHandler}>
+          <button className={styles.btnPag} onClick={modifyCurrentPageHandler}>
             Next
           </button>
         </li>

@@ -5,7 +5,8 @@ const initialState = {
   movieData: bestMovies,
   searchResults: [],
   loading: true,
-  currentPage: 2,
+  pageNumber: [1, 2, 3, 4, 5],
+  currentPage: 1,
   maxPageLimit: 5,
   minPageLimit: 0,
   isLoading: true,
@@ -24,10 +25,14 @@ const paginationSlice = createSlice({
     addSearchResults: (state, action) => {
       state.searchResults = action.payload;
     },
+    changeCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
   },
 });
 
 // console.log(paginationSlice);
-export const { prevPage, nextPage, addSearchResults } = paginationSlice.actions;
+export const { prevPage, nextPage, addSearchResults, changeCurrentPage } =
+  paginationSlice.actions;
 
 export default paginationSlice.reducer;
