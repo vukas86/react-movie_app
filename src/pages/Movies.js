@@ -1,12 +1,9 @@
-import { useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link, json } from "react-router-dom";
 import Pagination from "../components/pagination/Pagination";
 import styles from "./Movies.module.css";
-import { MovieContext } from "../store/MovieContext";
 
 function Movies() {
-  const { movie, setMovie } = useContext(MovieContext);
   const { movieData } = useSelector((store) => store.pagination);
   const { searchResults } = useSelector((store) => store.pagination);
 
@@ -18,6 +15,10 @@ function Movies() {
   return (
     <>
       <div className="moviesContainer">
+        {searchResults === undefined && (
+          <h2 className={styles.title}>Our Choices of Movies</h2>
+        )}
+
         <div className={styles.cards}>
           {movieInfo.map((movie) => (
             <Link
@@ -46,7 +47,7 @@ function Movies() {
           ))}
         </div>
       </div>
-      <Pagination />
+      {Array.isArray(searchResults) && <Pagination />}
     </>
   );
 }
