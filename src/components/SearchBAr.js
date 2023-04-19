@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { MovieContext } from "../../src/store/MovieContext";
+
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./SearchBAr.module.css";
 import { addSearchResults } from "../redux/features/pagination/paginationSlice";
@@ -9,7 +9,7 @@ import { addSearchResults } from "../redux/features/pagination/paginationSlice";
 
 function SearchBar() {
   const [query, setQuery] = useState("");
-  const { movie, setMovie } = useContext(MovieContext);
+
   const dispatch = useDispatch();
 
   const { currentPage, searchResults } = useSelector(

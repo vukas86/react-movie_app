@@ -1,9 +1,17 @@
 import { NavLink } from "react-router-dom";
 import SearchBar from "./SearchBAr";
 import styles from "./MainNav.module.css";
+import hamLogo from "../assets/logos/menu-2.svg";
 import logoImage from "../assets/logos/logo_white.png";
+import { useState } from "react";
 
 function MainNav() {
+  const [hamMenu, setHamMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setHamMenu(!hamMenu);
+  };
+
   return (
     <div className="root-layout">
       <header>
@@ -13,7 +21,7 @@ function MainNav() {
           </NavLink>
         </div>
         <SearchBar />
-        <nav>
+        <nav className={styles.navBar}>
           <li>
             <NavLink
               to="/"
@@ -56,6 +64,14 @@ function MainNav() {
             </NavLink>
           </li>
         </nav>
+        <span>
+          <img
+            src={hamLogo}
+            alt="logo"
+            className={styles.hamLogo}
+            onClick={toggleMenu}
+          ></img>
+        </span>
       </header>
     </div>
   );

@@ -55,3 +55,31 @@
 .info span {
   color: rgb(158, 222, 81);
 }
+
+@media only screen and (max-width: 550px),
+  only screen and (max-device-width: 550px) {
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+  /* .info {
+    display: flex;
+    flex-direction: column;
+  } */
+  .detailImg {
+    width: 100%;
+  }
+
+  .detailImg img {
+    width: 330px;
+  }
+  .closeBtn {
+    position: absolute;
+    top: 87px;
+    right: 23px;
+  }
+} ;
