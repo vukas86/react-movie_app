@@ -41,7 +41,7 @@ function Shows() {
 export default Shows;
 
 export const showsLoader = async () => {
-  const res = await fetch("http://localhost:4000/movies");
+  const res = await fetch("http://localhost:8000/shows");
   if (!res.ok) {
     throw json(
       { message: "Could not load shows!" },

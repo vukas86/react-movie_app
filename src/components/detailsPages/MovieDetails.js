@@ -1,24 +1,24 @@
 import { useLoaderData, json } from "react-router-dom";
-import { useContext } from "react";
-import { MovieContext } from "../../store/MovieContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorites } from "../../redux/features/pagination/paginationSlice";
 
 import CloseBtn from "./CloseBtn";
 
 import styles from "./DetailsPage.module.css";
 
 function DetailsPage() {
-  const { userList, setUserList } = useContext(MovieContext);
-
   const movieDetails = useLoaderData();
+  const dispatch = useDispatch();
+
+  const { favorites } = useSelector((store) => store.pagination);
+  console.log(favorites);
 
   const addToListHandler = () => {
-    const sameMovie = userList.find((m) => m.imdbID === movieDetails.imdbID);
-    if (!sameMovie) {
-      setUserList((prevState) => {
-        return [movieDetails, ...prevState];
-      });
+    const addFav = favorites.find((fav) => fav.imdbID === movieDetails.imdbID);
+    if (!addFav) {
+      dispatch(addToFavorites(movieDetails));
     } else {
-      return alert("Movie already added");
+      return alert("Show already added");
     }
   };
 

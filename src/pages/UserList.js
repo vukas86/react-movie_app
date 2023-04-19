@@ -1,26 +1,25 @@
-import { useContext } from "react";
-import { MovieContext } from "../store/MovieContext";
+import { removeFromFavorites } from "../redux/features/pagination/paginationSlice";
 import styles from "./UserList.module.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function UserList() {
-  const { userList, setUserList } = useContext(MovieContext);
+  const { favorites } = useSelector((store) => store.pagination);
+  const dispatch = useDispatch();
 
   const itemRemoveHandler = (index) => {
-    const newList = userList.filter((_, i) => i !== index);
-
-    setUserList(newList);
+    dispatch(removeFromFavorites(favorites.filter((_, i) => i !== index)));
   };
   return (
     <>
       <div className="moviesContainer">
         <div className="cards">
-          {userList.length > 0 && Array.isArray(userList) ? (
-            userList.map((listItem, index) => (
-              <div key={listItem.imdbID}>
+          {favorites.length > 0 && Array.isArray(favorites) ? (
+            favorites.map((listItem, index) => (
+              <div key={listItem.imdbID || listItem.id}>
                 <div className={styles.oneMovie}>
                   <img
-                    src={listItem.Poster}
-                    alt={listItem.Title}
+                    src={listItem.Poster || listItem.imgPath}
+                    alt={listItem.Title || listItem.title}
                     onError={(e) =>
                       (e.target.onerror = null)(
                         (e.target.src =
@@ -29,7 +28,7 @@ function UserList() {
                     }
                   />
                   <div>
-                    <h3>{listItem.Title}</h3>
+                    <h3>{listItem.Title || listItem.title}</h3>
                   </div>
                   <div>
                     <button
