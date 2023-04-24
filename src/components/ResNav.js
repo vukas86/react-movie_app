@@ -20,7 +20,7 @@ function ResNav() {
         <NavLink to="shows">Shows</NavLink>
       </li>
       <li>
-        <NavLink to="myList">User Lists</NavLink>
+        <NavLink to="myList">My Lists</NavLink>
       </li>
     </nav>
   );

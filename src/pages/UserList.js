@@ -42,7 +42,7 @@ function UserList() {
               </div>
             ))
           ) : (
-            <h1>You dont have favorites!</h1>
+            <h1 className={styles.bigTitle}>You dont have favorites!</h1>
           )}
         </div>
       </div>
