@@ -11,7 +11,7 @@ function Shows() {
         <div className={styles.cards}>
           {shows.shows.map((show) => (
             <Link
-              to={`/shows/${show.id}`}
+              to={process.env.PUBLIC_URL + `/shows/${show.id}`}
               key={show.id}
               className={styles.card}
             >
