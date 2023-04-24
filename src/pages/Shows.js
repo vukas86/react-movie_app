@@ -4,14 +4,14 @@ import styles from "./Movies.module.css";
 
 function Shows() {
   const shows = useLoaderData();
-  console.log(shows);
+  console.log(shows.shows);
   return (
     <>
       <div className={styles.moviesContainer}>
         <div className={styles.cards}>
           {shows.shows.map((show) => (
-            <Link
-              to={process.env.PUBLIC_URL + `/shows/${show.id}`}
+            <div
+              // to={process.env.PUBLIC_URL + `/shows/${show.id}`}
               key={show.id}
               className={styles.card}
             >
@@ -30,7 +30,7 @@ function Shows() {
                 <h3>{show.title}</h3>
                 <h4>{show.year}</h4>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

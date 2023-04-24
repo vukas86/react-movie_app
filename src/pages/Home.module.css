@@ -38,3 +38,10 @@ h1 {
 .btnRed:active {
   top: 2px;
 }
+
+@media only screen and (max-width: 550px),
+  only screen and (max-device-width: 550px) {
+  .container {
+    height: 70vh;
+  }
+}
