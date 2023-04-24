@@ -9,7 +9,7 @@ function Shows() {
     <>
       <div className={styles.moviesContainer}>
         <div className={styles.cards}>
-          {shows.map((show) => (
+          {shows.shows.map((show) => (
             <Link
               to={`/shows/${show.id}`}
               key={show.id}
@@ -41,7 +41,7 @@ function Shows() {
 export default Shows;
 
 export const showsLoader = async () => {
-  const res = await fetch("http://localhost:8000/shows");
+  const res = await fetch(process.env.PUBLIC_URL + "/shows.json");
   if (!res.ok) {
     throw json(
       { message: "Could not load shows!" },
