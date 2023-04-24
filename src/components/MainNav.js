@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import SearchBar from "./SearchBAr";
 import styles from "./MainNav.module.css";
-import hamLogo from "../assets/logos/menu-2.svg";
+import hamLogo from "../assets/logos/iconfinder-icon.svg";
 import logoImage from "../assets/logos/logo_white.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ResNav from "./ResNav";
 
 function MainNav() {
   const [hamMenu, setHamMenu] = useState(false);
+  const isMobile = window.screen.width < 600;
 
   const toggleMenu = () => {
     setHamMenu(!hamMenu);
@@ -73,6 +75,8 @@ function MainNav() {
           ></img>
         </span>
       </header>
+
+      {hamMenu && <ResNav />}
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.menuBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgb(28, 0, 1);
+  background: linear-gradient(
+    166deg,
+    rgba(28, 0, 1, 0.6643907563025211) 31%,
+    rgba(66, 51, 7, 1) 89%
+  );
+  text-align: center;
+  animation: dropdown 1s linear 0s 1 normal none;
+}
+.menuBar li {
+  margin-top: 15px;
+  padding: 10px;
+}
+
+@keyframes dropdown {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+}

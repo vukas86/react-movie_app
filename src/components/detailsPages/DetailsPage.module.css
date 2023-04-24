@@ -75,11 +75,14 @@
   }
 
   .detailImg img {
-    width: 330px;
+    width: 280px;
   }
   .closeBtn {
     position: absolute;
     top: 87px;
     right: 23px;
   }
-} ;
+  .info {
+    width: 90%;
+  }
+}

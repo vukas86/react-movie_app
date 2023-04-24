@@ -8,6 +8,7 @@ function RootLayout() {
   return (
     <>
       <MainNav />
+
       {navigation.state === "loading" && <Loader />}
       <Outlet />
     </>
