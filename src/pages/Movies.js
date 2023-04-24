@@ -58,7 +58,7 @@ export default Movies;
 
 export const moviesLoader = async () => {
   const res = await fetch(
-    "http://www.omdbapi.com/?s=inception&apikey=560c873c"
+    "https://www.omdbapi.com/?s=inception&apikey=560c873c"
   );
 
   if (!res.ok) {
