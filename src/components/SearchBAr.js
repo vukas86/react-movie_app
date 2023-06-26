@@ -8,6 +8,9 @@ import { addSearchResults } from "../redux/features/pagination/paginationSlice";
 // const apiKey = "apikey=560c873c";
 
 function SearchBar() {
+  const apiKey = process.env.REACT_APP_API_KEY;
+  console.log(apiKey);
+
   const [query, setQuery] = useState("");
 
   const dispatch = useDispatch();
@@ -21,7 +24,7 @@ function SearchBar() {
 
   useEffect(() => {
     fetch(
-      "https://www.omdbapi.com/?apikey=560c873c" +
+      `https://www.omdbapi.com/?apikey=${apiKey}` +
         `&s=${query}` +
         "&type=movie" +
         `&page=${currentPage}`
