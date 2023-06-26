@@ -24,15 +24,15 @@ function Error() {
   return (
     <>
       <MainNav />
-      <div className={styles.container}>
+      <section className={styles.container}>
         <div className={styles.leftError}>
           <h3>{title} - ERROR</h3>
           <p>{message}</p>
         </div>
-        <div className={styles.rightError}>
+        <figure className={styles.rightError}>
           <img src={batImg} alt="batman"></img>
-        </div>
-      </div>
+        </figure>
+      </section>
     </>
   );
 }

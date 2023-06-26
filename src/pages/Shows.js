@@ -7,7 +7,7 @@ function Shows() {
   console.log(shows.shows);
   return (
     <>
-      <div className={styles.moviesContainer}>
+      <section className={styles.moviesContainer}>
         <div className={styles.cards}>
           {shows.shows.map((show) => (
             <div
@@ -33,7 +33,7 @@ function Shows() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 }

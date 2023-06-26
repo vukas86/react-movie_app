@@ -19,7 +19,7 @@ function Movies() {
           <h2 className={styles.title}>Our Choices of Movies</h2>
         )}
 
-        <div className={styles.cards}>
+        <section className={styles.cards}>
           {movieInfo.map((movie) => (
             <Link
               to={movie.imdbID.toString()}
@@ -45,7 +45,7 @@ function Movies() {
               </div>
             </Link>
           ))}
-        </div>
+        </section>
       </div>
       {Array.isArray(searchResults) && <Pagination />}
     </>

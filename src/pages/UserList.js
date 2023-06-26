@@ -11,7 +11,7 @@ function UserList() {
   };
   return (
     <>
-      <div className="moviesContainer">
+      <section className="moviesContainer">
         <div className="cards">
           {favorites.length > 0 && Array.isArray(favorites) ? (
             favorites.map((listItem, index) => (
@@ -45,7 +45,7 @@ function UserList() {
             <h1 className={styles.bigTitle}>You dont have favorites!</h1>
           )}
         </div>
-      </div>
+      </section>
     </>
   );
 }

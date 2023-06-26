@@ -24,8 +24,8 @@ function DetailsPage() {
 
   return (
     <>
-      <div className={styles.detailsContainer}>
-        <div className={styles.detailImg}>
+      <section className={styles.detailsContainer}>
+        <figure className={styles.detailImg}>
           <img
             src={movieDetails.Poster}
             alt={movieDetails.Title}
@@ -37,7 +37,7 @@ function DetailsPage() {
               )
             }
           />
-        </div>
+        </figure>
         <div className={styles.info}>
           <div>
             <h2>{movieDetails.Title}</h2>
@@ -60,7 +60,7 @@ function DetailsPage() {
         <div>
           <CloseBtn />
         </div>
-      </div>
+      </section>
     </>
   );
 }

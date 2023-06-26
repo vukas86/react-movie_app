@@ -23,10 +23,10 @@ function DetailsPage() {
 
   return (
     <>
-      <div className={styles.detailsContainer}>
-        <div className={styles.detailImg}>
+      <section className={styles.detailsContainer}>
+        <figure className={styles.detailImg}>
           <img src={show.imgPath} alt={show.title} />
-        </div>
+        </figure>
         <div className={styles.info}>
           <div>
             <h2>{show.title}</h2>
@@ -46,7 +46,7 @@ function DetailsPage() {
         <div>
           <CloseBtn />
         </div>
-      </div>
+      </section>
     </>
   );
 }
