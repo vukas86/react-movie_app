@@ -43,3 +43,8 @@ Start the server
 ```bash
   npm run start
 ```
+## Screenshots
+![ss](https://github.com/vukas86/react-movie_app/assets/83580359/f9497563-5f97-4fea-a18f-0f3bc418b504)
+
+![ss2](https://github.com/vukas86/react-movie_app/assets/83580359/f6d5ce21-40bb-4fff-8aa5-1a599d741fc4)
+
