@@ -4,9 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./SearchBAr.module.css";
 import { addSearchResults } from "../redux/features/pagination/paginationSlice";
 
-// const api = "https://www.omdbapi.com/?";
-// const apiKey = "apikey=560c873c";
-
 function SearchBar() {
   const apiKey = process.env.REACT_APP_API_KEY;
   console.log(apiKey);
